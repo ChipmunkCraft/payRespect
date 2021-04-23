@@ -13,10 +13,10 @@ public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		new PlayerDeathListener(this);
+        saveDefaultConfig();
 		// startup
 		// reloads
 		// plugins do a reload
-
 	}
 
 	@Override
@@ -24,7 +24,6 @@ public class Main extends JavaPlugin {
 		// shutdown
 		// reload
 		// plugins reboot
-
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
