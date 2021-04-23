@@ -1,10 +1,12 @@
 main: com.tibthink.payRespect.Main
-name: F
-version: 1.1.4
-author: tibthink
-api-version: "1.16.1"
+name: PayRespect
+prefix: PayRespect
+version: 1.1.4.0001
+authors: [ tibthink, ChipmunkCraft ]
+api-version: 1.16
 description: Sends a F to the chat whenever someone dies
 
 commands:
-   Test: 
-      description: Tests to make sure the plugin works
+  testpr:
+    description: Tests to make sure the plugin is running
+    usage: /testpr

@@ -1,0 +1,8 @@
+#PayRespect configuration file
+#Version 1.0-SNAPSHOT
+
+deathMsg: "&7[PayRespect] &l&4F in Chat for &c%player%&f"
+testMsg: "&7[PayRespect] &2Successful Test by &c%player%&f"
+killerMsg: "&7[PayRespect] &1&4You killed &c%player%&f"
+killedMsg: "&7[PayRespect] &1&4You got vibechecked by &c%player%&f"
+notPermitted: "&7[PayRespect] &rYou do NOT have permission to run this!&f"

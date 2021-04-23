@@ -1,20 +1,19 @@
 package com.tibthink.payRespect.Listeners;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 import com.tibthink.payRespect.Main;
+import com.tibthink.payRespect.Utils.Utils;
 
 public class PlayerDeathListener implements Listener {
 
 	private static Main plugin;
 
 	public PlayerDeathListener(Main plugin) {
-		this.plugin = plugin;
 
 		Bukkit.getPluginManager().registerEvents(this, plugin);
 	}
@@ -22,13 +21,13 @@ public class PlayerDeathListener implements Listener {
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		if (e.getEntity().getPlayer() instanceof Player) {
-//			Player killer = e.getEntity().getKiller();
-//			Player p = e.getEntity();
+            Player killer = e.getEntity().getKiller();
+            Player p = e.getEntity();
 
-			Bukkit.broadcastMessage("[Server] §l§4F");
-			
-//			killer.sendMessage(Utils.chat("you have murdered" + p.getDisplayName()));
-//			p.sendMessage(Utils.chat("you got vibechecked by" + killer.getDisplayName()));
+			Bukkit.broadcastMessage(plugin.getConfig().getString("deathMsg").replace("%player%", p.getDisplayName()));
+
+            killer.sendMessage(Utils.chat(plugin.getConfig().getString("killerMsg").replace("%player%", p.getDisplayName())));
+            p.sendMessage(Utils.chat(plugin.getConfig().getString("killedMsg").replace("%player%", killer.getDisplayName())));
 			return;
 		}
 	}
